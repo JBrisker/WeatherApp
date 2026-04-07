@@ -1,0 +1,40 @@
+body{
+  background-image: url("images/weather-background.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div{
+  display:flex;
+  justify-content:center;
+  padding: 0.5em;
+  margin:0.5em;
+  font-weight:bold;
+  font-family: Arial, sans-serif, serif, sans-serif;
+  box-sizing:border-box;
+  font-size:40px;
+  color:white;
+  
+}
+
+form{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+input{
+  padding:0.5em;
+  font-size:20px;
+  width:200px;
+}
+
+button{
+  padding:0.5em;
+  margin-left:0.5em;
+  font-size:20px;
+  cursor:pointer;
+  width:100px;
+  border-radius: 0.5em;
+  font-size:20px;
+}
