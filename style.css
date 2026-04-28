@@ -2,9 +2,17 @@ body{
   background-image: url("images/weather-background.jpg");
   background-size:cover;
   background-repeat: no-repeat;
-  background-position: center;
 }
-div{
+
+.container{
+  background-color: aliceblue;
+  opacity: 0.7;
+  width:fit-content;
+  border-radius: 0.7em;
+  display:flex;
+  flex-flow: column-reverse;
+ }
+section{
   display:flex;
   justify-content:center;
   padding: 0.5em;
@@ -13,8 +21,11 @@ div{
   font-family: Arial, sans-serif, serif, sans-serif;
   box-sizing:border-box;
   font-size:40px;
-  color:white;
   
+}
+#icon{
+  display:flex;
+  justify-content: center;
 }
 
 form{
