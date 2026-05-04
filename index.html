@@ -8,21 +8,32 @@
   </head>
   <body>
     <div class="container">
-      <section>
+      <div class="zipCode">
         <form>
           <label for="zip">zip code:</label>
           <input type="text" id="zip" name="zip" />
           <button type="button" id="submit">Submit</button>
         </form>
-      </section>
-      <section>
-        <button type="button" id="unit-toggle">Units</button>
-      </section>
-      <section id="date_time"></section>
-      <section id="location"></section>
-      <section id="weather"></section>
-      <span id="icon"></span>
-      <section id="temperature"></section>
+      </div>
+      <div class="unit-slider">
+        <div class="toggle-button-cover">
+          <div class="button-cover">
+            <div class="button-u">
+              <input type="checkbox" id="unit-toggle" />
+              <label for="unit-toggle" id="unit-label">F/C</label>
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <div id="date_time"></div>
+        <div id="location"></div>
+        <div id="weather"></div>
+        <span id="icon"></span>
+        <div id="temperature"></div>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
