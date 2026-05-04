@@ -1,51 +1,166 @@
-body{
+body {
   background-image: url("images/weather-background.jpg");
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
+  font-family: Arial, sans-serif, serif;
 }
-
-.container{
-  background-color: aliceblue;
+/*background of data and input field*/
+.container {
+  background-color: rgba(240, 248, 255);
   opacity: 0.7;
-  width:fit-content;
+  width: 56%;
+  height: 75%;
   border-radius: 0.7em;
-  display:flex;
-  flex-flow: column-reverse;
- }
-section{
-  display:flex;
-  justify-content:center;
-  padding: 0.5em;
-  margin:0.5em;
-  font-weight:bold;
-  font-family: Arial, sans-serif, serif, sans-serif;
-  box-sizing:border-box;
-  font-size:40px;
-  
 }
-#icon{
-  display:flex;
-  justify-content: center;
-}
-
-form{
+/* data retrieved from api*/
+.data {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  flex-direction: column-reverse;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-weight: bold;
+  box-sizing: border-box;
+  font-size: 40px;
 }
 
-input{
-  padding:0.5em;
-  font-size:20px;
-  width:200px;
+/* user interface*/
+.zipCode {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px;
 }
 
-button{
-  padding:0.5em;
-  margin-left:0.5em;
-  font-size:20px;
-  cursor:pointer;
-  width:100px;
-  border-radius: 0.5em;
-  font-size:20px;
+/*unit slider */
+.unit-slider {
+  margin-left: 20px;
+}
+/*zip code input field*/
+#zip {
+  margin-top: 20px;
+  padding: 0.5em;
+  font-size: 20px;
+  width: 150px;
+  height: 25px;
+}
+/*submit button design*/
+#submit {
+  padding: 0.5em;
+  margin-left: 0.5em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20%;
+  font-size: 15px;
+}
+/*slider design*/
+.toggle-button-cover {
+  display: table-cell;
+  position: absolute;
+  width: 75px;
+  height: 25px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+/*slider cover*/
+.button-cover {
+  height: 100%;
+  width: 100%;
+  border-radius: 75%;
+  position: relative;
+}
+/*button slider background*/
+.button-cover:before {
+  position: absolute;
+  color: #1c73e6;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+  right: 0;
+  bottom: 0;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button-u {
+  position: absolute;
+  width: 75px;
+  height: 35px;
+}
+
+.button-u,
+.button-u .layer {
+  border-radius: 100px;
+}
+/*hides checkbox label*/
+#unit-label {
+  display: none;
+}
+/* hide checkbox*/
+#unit-toggle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  background-color: #80cff1;
+  width: 100%;
+  height: 75%;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/*before box checked*/
+.button-u .knobs:before {
+  content: "°F";
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 7px;
+  background-color: #3cbaf5;
+  border-radius: 60%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+/*after box is checked*/
+.button-u #unit-toggle:checked ~ .knobs:before {
+  content: "°C";
+  left: 46px;
+  background-color: #f44336;
+}
+
+.button-u #unit-toggle:checked ~ .layer {
+  background-color: #f7c2c2;
+}
+
+.button-u .knobs,
+.button-u .knobs:before,
+.button-u .layer {
+  transition: 0.3s ease all;
 }
