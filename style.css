@@ -1,7 +1,11 @@
 body {
-  background-image: url("images/weather-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background-repeat: round;
   font-family: Arial, sans-serif, serif;
 }
 /*background of data and input field*/
@@ -17,7 +21,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 1em;
   font-weight: bold;
   box-sizing: border-box;
   font-size: 40px;
@@ -151,7 +155,7 @@ body {
 /*after box is checked*/
 .button-u #unit-toggle:checked ~ .knobs:before {
   content: "°C";
-  left: 46px;
+  transform: translateX(46px);
   background-color: #f44336;
 }
 
